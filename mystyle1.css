@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+	font-family: 'Lato', sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.frame {
+	position: absolute;
+	left: 50%; top: 50%;
+	width: 700px;
+	height: 500px;
+	background: #3A4366;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0,0,0, 0.25);
+}
+
+.frame .buttons {
+	margin-top: 20px;
+	height: 50px;
+}
+
+.frame .buttons .login,
+.frame .buttons .signup {
+	position: relative;
+	height: 48px;
+}
+
+.frame .buttons .button {
+	position: absolute;
+	height: 48px;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+	line-height: 48px;
+}
+
+.frame .buttons .line {
+	position: relative;
+	height: 2px;
+	transition: all .5s
+}
+
+.frame .buttons .line div {
+	position: absolute;
+	height: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+}
+
+.frame .content {
+	position: relative;
+	height: 430px;
+}
+
+.frame .content .login,
+.frame .content .signup {
+	position: absolute;
+	left: 50%; margin-left: -125px;
+	top: 50%; margin-top: -150px;
+	width: 250px;
+	height: 300px;
+	border-radius: 10px;
+}
+
+.frame .content .login {
+	z-index: 2;
+	transform: translate(-20px, -20px) scale(1.05);
+	/*transform: translate(-70%, -20px) scale(1.05);*/
+	background: white;
+	border: 2px solid #808080;
+}
+
+.frame .content .signup {
+	transform: translate(20px, 20px) scale(0.95);
+	/*transform: translate(70%, 20px) scale(0.95);*/
+	background: #BFBFBF;
+}
+
+.frame .content .form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.frame .content .form .title {
+	text-align: center;
+	margin-bottom: 10px;
+	color: #808080;
+	font-size: 18px;
+}
+
+.frame .content .form .field {
+	position: relative;
+}
+
+.frame .content .form .label {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	color: #A6A6A6;
+	font-size: 15px;
+}
+
+.frame .content .form input {
+	padding: 8px 15px;
+	padding-top: 10px;
+	margin: 5px 0;
+	color: #3A4366;
+	border-radius: 5px;
+	border: 1px solid #808080;
+	transition: all .3s;
+}
+
+.frame .content .form input:focus {
+	border: 1px solid black;
+}
+
+.frame .content .form button {
+	position: relative;
+	left: 50%;
+	margin-left: -62.5px;
+	margin-top: 15px;
+	width: 125px;
+	height: 35px;
+	border: 2px solid #3A4366;
+	background: #3A4366;
+	border-radius: 10px;
+	color: white;
+	transition: all .5s;
+}
+
+.frame .content .form button:hover {
+	background: white;
+	color: #3A4366;
+}
+
+.frame .content .login-change-1 {
+	animation: login .8s forwards;
+}
+
+.frame .content .login-change-2 {
+	animation: unlogin .8s forwards;
+}
+
+.frame .content .signup-change-1 {
+	animation: signup .8s forwards;
+}
+
+.frame .content .signup-change-2 {
+	animation: unsignup .8s forwards;
+}
+
+.frame .content .animation-opacity-on {
+	animation: animation-opacity-2 .8s forwards;
+}
+
+.frame .content .animation-opacity-off {
+	animation: animation-opacity-1 .8s forwards;
+}
+
+@keyframes login {
+	0% {
+		transform: translate(-20px, -20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+
+	50% {
+		transform: translate(-70%, -20px) scale(1.05);
+		background: white;
+		border: none;
+		z-index: 2;
+	}
+
+	51% {
+		transform: translate(-70%, -20px) scale(1.05);
+		background: white;
+		border: none;
+		z-index: 1;	
+	}
+
+	100% {
+		transform: translate(-20px, -20px) scale(0.95);
+		background: #BFBFBF;
+		border: none;
+		z-index: 1;
+	}
+}
+
+@keyframes signup {
+	0% {
+		transform: translate(20px, 20px) scale(0.95);
+		background: #BFBFBF;
+		border: none;
+		z-index: 1;
+	}
+
+	50% {
+		transform: translate(70%, 20px) scale(0.95);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 1;
+	}
+
+	51% {
+		transform: translate(70%, 20px) scale(0.95);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+
+	100% {
+		transform: translate(20px, 20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+}
+
+@keyframes unlogin {
+	0% {
+		transform: translate(-20px, -20px) scale(0.95);
+		background: #BFBFBF;
+		border: none;
+		z-index: 1;
+	}
+
+	50% {
+		transform: translate(-70%, -20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+
+	51% {
+		transform: translate(-70%, -20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;	
+	}
+
+	100% {
+		transform: translate(-20px, -20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+}
+
+@keyframes unsignup {
+	0% {
+		transform: translate(20px, 20px) scale(1.05);
+		background: white;
+		border: 2px solid #808080;
+		z-index: 2;
+	}
+
+	50% {
+		transform: translate(70%, 20px) scale(0.95);
+		background: white;
+		border: none;
+		z-index: 1;
+	}
+
+	51% {
+		transform: translate(70%, 20px) scale(0.95);
+		background: white;
+		border: none;
+		z-index: 1;
+	}
+
+	100% {
+		transform: translate(20px, 20px) scale(0.95);
+		background: #BFBFBF;
+		border: none;
+		z-index: 1;
+	}
+}
+
+@keyframes animation-opacity-1 {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes animation-opacity-2 {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
